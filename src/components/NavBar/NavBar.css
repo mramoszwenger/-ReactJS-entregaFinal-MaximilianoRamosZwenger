@@ -1,0 +1,50 @@
+#principal-nav a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    transition: 0.5s;
+  
+    &:hover {
+      font-size: 22px;
+      color: #ff6600;
+      text-shadow: 2px 2px 4px #333333;
+    }
+  
+    .company__logo {
+      width: 350px;
+      height: 90px;
+      margin: 5px 0 0 50px;
+    }
+  }
+  
+  .navbar-nav {
+    margin: 0 50px 0 0;
+  }
+  
+  .navbar-toggler {
+    margin: 0 50px 0 0;
+  }
+  
+  .dropdown-menu {
+    margin-top: 30% !important;
+    padding: 25% !important;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #principal-nav a {
+      .company__logo {
+        width: 150px;
+        height: 40px;
+        margin: 5px 0 0 50px;
+      }
+    }
+  
+    .dropdown-menu {
+      margin-top: 0% !important;
+      padding: 0% !important;
+    }
+  
+    .dropdown-item {
+      font-size: 15px !important;
+    }
+  }
