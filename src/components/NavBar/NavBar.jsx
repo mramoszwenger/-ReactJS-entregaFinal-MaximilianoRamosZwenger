@@ -34,10 +34,11 @@ const NavBar = () => {
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>
+
+            <CartWidget/>
+
           </Container>
         </Navbar>
-
-        <CartWidget/>
 
       </>
     )
