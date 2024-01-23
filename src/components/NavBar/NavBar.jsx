@@ -11,7 +11,7 @@ const NavBar = () => {
       <>
         <Navbar expand="lg" bg="light" id="principal-nav">
           <Container>
-            <Navbar.Brand href="https://errezetasoluciones.com" target="_blank" className="animate__animated animate__bouncein">
+            <Navbar.Brand href="#" className="animate__animated animate__bouncein">
               <img src="/logotipoEmpresa.png" alt="logo-empresa" className="company__logo"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="mainNav" />
