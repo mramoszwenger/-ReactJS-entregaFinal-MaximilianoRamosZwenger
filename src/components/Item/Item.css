@@ -1,0 +1,21 @@
+.itemList__services__card {
+    padding: 50px 25px 50px 25px;
+  }
+  
+  .itemList__services__name  {
+    color: #333333;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .itemList__services__price {
+    color: #333333;
+    font-size: 20px;
+    margin: 10px 0 5px 0;
+  }
+  
+  .itemList__services__description {
+    color: #666666;
+    font-size: 14px;
+    margin: 25px 0 5px 0;
+  }

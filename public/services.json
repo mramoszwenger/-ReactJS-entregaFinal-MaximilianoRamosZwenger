@@ -2,19 +2,19 @@
     {
         "id": 1,
         "nombre": "Administración de Sistemas",
-        "precio": 11000,
+        "precio": 30900,
         "descripcion": "Por medio de nuestros planes de mantenimiento, pensados acorde a esta situación. Ofrecemos solvencia desde la Administración de Servidores, hasta el usuario final. Con atención constante desde la Mesa de Ayuda y con acceso remoto. El soporte presencial complementa toda problemática subyacente que no se pueda resolver de manera remota."
     },
     {
         "id": 2,
         "nombre": "Redes de Datos y Telecomunicación",
-        "precio": 11000,
+        "precio": 38900,
         "descripcion": "Las redes corporativas poseen una utilidad invaluable a la hora de incrementar la productividad de la compañía moviendo información tanto dentro como fuera de la empresa en tan solo milisegundos. Por ello es muy importante el planeamiento e implementación y montaje integral de una red de datos desde el cableado hasta los dispositivos Networking. Y asi preveer la escalabilidad de la misma."
     },
     {
         "id": 3,
         "nombre": "Soluciones en la Nube",
-        "precio": 11000,
+        "precio": 15900,
         "descripcion": "Impulsamos el poder del cambio y generamos un nuevo y extraordinario valor para las organizaciones. Le damos prioridad a las necesidades de cada empresa. Creamos soluciones específicas para cada sector, de modo que puedan pasarse a la nube (y aprovecharla) desde el primer momento. Sabemos que la nube es mucho más que una solución tecnológica, por eso acompañamos en el viaje hacia la computación en la nube."
     }
 ]

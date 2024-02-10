@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
+import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -37,18 +38,7 @@ const ItemListContainer = ({ greeting }) => {
     <div className="container">
         <div className="row">
           {
-            services.length === 0 ? <h3 className='text-center'>No hay productos cargados...</h3> :
-              services.map((service) => (
-                <div key={service.id} className="col-md-4 mb-4 text-center">
-                  <div className="card h-100 itemList__services__card">
-                    <div className="card-body">
-                      <h3 className='itemList__services__name'>{service.nombre}</h3>
-                      <h3 className='itemList__services__price'>{service.precio}</h3>
-                      <h4 className='itemList__services__description'>{service.descripcion}</h4>
-                    </div>
-                  </div>
-                </div>
-              ))
+            services.length === 0 ? <h3 className='text-center'>No hay productos para mostrar...</h3> : <ItemList services={services}/>
           }
         </div>
       </div>
