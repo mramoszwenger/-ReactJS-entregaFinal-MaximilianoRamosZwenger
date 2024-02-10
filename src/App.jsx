@@ -1,6 +1,7 @@
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
 
       <NavBar/>
 
-      <ItemListContainer greeting={"Bienvenidos a errezeta Solucione IT"}/>
+      <ItemListContainer greeting={"Soluciones para Potenciar tu Negocio"}/>
+
+      <Footer/>
 
     </>
   )
