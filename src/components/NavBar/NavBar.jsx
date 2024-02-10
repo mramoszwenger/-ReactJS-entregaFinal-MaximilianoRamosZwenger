@@ -12,7 +12,7 @@ const NavBar = () => {
         <Navbar expand="lg" bg="light" id="principal-nav">
           <Container>
             <Navbar.Brand href="#" className="animate__animated animate__bouncein">
-              <img src="/src/assets/logotipoEmpresa.png" alt="logo-empresa" className="company__logo"/>
+              <img src="/src/assets/img/logotipoEmpresa.png" alt="logo-empresa" className="company__logo"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="mainNav" />
             <Navbar.Collapse id="mainNav">
