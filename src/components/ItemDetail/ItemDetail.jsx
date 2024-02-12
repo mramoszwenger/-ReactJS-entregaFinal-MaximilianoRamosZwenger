@@ -9,7 +9,7 @@ const ItemDetail = ({service}) => {
         <h4>Desde ${service.precio}</h4>
         <p>{service.descripcion}</p>
 
-        <ItemCount/>
+        <ItemCount initial={1}/>
     </div>
   )
 }
