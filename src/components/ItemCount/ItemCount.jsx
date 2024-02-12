@@ -20,7 +20,7 @@ const ItemCount = () => {
 
   return (
     <div>
-        <p>Contador: {contador}</p>
+        <p>{contador}</p>
         <button onClick={decrementar}>-</button>
         <button onClick={agregarCarrito}>Agregar Servicio</button>
         <button onClick={incrementar}>+</button>

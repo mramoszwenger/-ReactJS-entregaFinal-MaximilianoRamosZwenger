@@ -12,7 +12,6 @@ const Item = ({services}) => {
                 <img src={service.img} alt={service.nombre} className='itemList__service__img'/>
                 <h3 className='itemList__services__name'>{service.nombre}</h3>
                 <h4 className='itemList__services__price'>Desde ${service.precio}</h4>
-                <p className='itemList__services__description'>{service.descripcion}</p>
               </div>
             </div>
           </div>
