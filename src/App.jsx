@@ -19,9 +19,7 @@ function App() {
         <Route path='/nosotros' element={<Error/>}/>
         <Route path='/contacto' element={<Error/>}/>
         <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
-        <Route path='/administracion-sitemas' element={<Error/>}/>
-        <Route path='/redes-datos' element={<Error/>}/>
-        <Route path='/cloud-computing' element={<Error/>}/>
+        <Route path='categoria/:nombre' element={<Error/>}/>
         <Route path='*' element={<Error/>}/>
 
       </Routes>
