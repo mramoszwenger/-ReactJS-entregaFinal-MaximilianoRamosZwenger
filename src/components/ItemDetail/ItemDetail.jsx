@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({service}) => {
   return (
@@ -7,6 +8,8 @@ const ItemDetail = ({service}) => {
         <img src={service.img} alt={service.nombre}/>
         <h4>Desde ${service.precio}</h4>
         <p>{service.descripcion}</p>
+
+        <ItemCount/>
     </div>
   )
 }
