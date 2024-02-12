@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import './NavBar.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -11,27 +12,27 @@ const NavBar = () => {
       <>
         <Navbar expand="lg" bg="light" id="principal-nav">
           <Container>
-            <Navbar.Brand href="#" className="animate__animated animate__bouncein">
+            <NavLink to={'/'}><Navbar.Brand className="animate__animated animate__bouncein">
               <img src="/src/assets/img/logotipoEmpresa.png" alt="logo-empresa" className="company__logo"/>
-            </Navbar.Brand>
+            </Navbar.Brand></NavLink>
             <Navbar.Toggle aria-controls="mainNav" />
             <Navbar.Collapse id="mainNav">
               <Nav className="ms-auto">
                 <Nav.Item>
-                  <Nav.Link href="#">Inicio</Nav.Link>
+                  <NavLink to={'/'}>Inicio</NavLink>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="#nosotros">Nosotros</Nav.Link>
+                  <NavLink to={'/nosotros'}>Nosotros</NavLink>
                 </Nav.Item>
                 <Nav.Item>
                   <NavDropdown title="Servicios" id="navbarDropdown" align="end">
-                    <NavDropdown.Item href="#servicios">Administración de Sistemas</NavDropdown.Item>
-                    <NavDropdown.Item href="#servicios">Redes de Datos y Telecomunicaciones</NavDropdown.Item>
-                    <NavDropdown.Item href="#servicios">Soluciones en la Nube</NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to={'/administracion-sitemas'}>Administración de Sistemas</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to={'/redes-datos'}>Redes de Datos y Telecomunicaciones</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to={'/cloud-computing'}>Soluciones en la Nube</NavLink></NavDropdown.Item>
                   </NavDropdown>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="contacto.html">Contacto</Nav.Link>
+                  <NavLink to={'/contacto'}>Contacto</NavLink>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>

@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ({id}) => {
+const ItemDetailContainer = () => {
 
   const [service,setService] = useState([]);
+
+  const {id} = useParams();
 
     useEffect(() => {
 
@@ -20,7 +23,7 @@ const ItemDetailContainer = ({id}) => {
 
       fetchData()
 
-    },[id])
+    },[])
 
   return (
     <div>

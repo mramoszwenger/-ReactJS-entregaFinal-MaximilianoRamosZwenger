@@ -1,21 +1,26 @@
+.global__itemContainer a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .itemList__services__card {
     padding: 50px 25px 50px 25px;
   }
   
-  .itemList__services__name  {
+.itemList__services__name  {
     color: #333333;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
   }
   
-  .itemList__services__price {
+.itemList__services__price {
     color: #333333;
     font-size: 20px;
     margin: 10px 0 5px 0;
   }
 
-  .itemList__service__img {
+.itemList__service__img {
     width: 100%;
     height: auto;
     border-radius: 5px;

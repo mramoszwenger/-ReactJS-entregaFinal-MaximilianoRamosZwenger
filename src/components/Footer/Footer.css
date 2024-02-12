@@ -9,3 +9,12 @@
     margin: 0; 
     font-size: 14px;
 }
+
+.footer__link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer__link:hover {
+    color: #999999;
+}
