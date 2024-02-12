@@ -19,7 +19,7 @@ function App() {
         <Route path='/nosotros' element={<Error/>}/>
         <Route path='/contacto' element={<Error/>}/>
         <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
-        <Route path='categoria/:nombre' element={<Error/>}/>
+        <Route path='categoria/:nombre' element={<ItemDetailContainer/>}/>
         <Route path='*' element={<Error/>}/>
 
       </Routes>
