@@ -15,12 +15,12 @@ const ItemCount = ({initial}) => {
     }
 
     const agregarCarrito = () => {
-        alert("Servicio agregado " + contador)
+        alert("Se agregaron " + contador + " equipo/s")
     }
 
   return (
     <div>
-        <p>Total de Equipos: {contador}</p>
+        <p>{contador}</p>
         <button onClick={decrementar}>-</button>
         <button onClick={agregarCarrito}>Agregar Servicio</button>
         <button onClick={incrementar}>+</button>
