@@ -1,0 +1,18 @@
+.error__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+.error__image__container {
+    height: 75vh;
+    text-align: center;
+}
+  
+.error__image {
+    max-width: 75%;
+    max-height: 100vh;
+    height: auto;
+  }

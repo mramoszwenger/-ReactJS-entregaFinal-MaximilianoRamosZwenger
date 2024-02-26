@@ -1,13 +1,21 @@
-import React from 'react';
-import './ItemList.css';
-import Item from '../Item/Item';
+import React from 'react'
+import Item from '../Item/Item'
 
 const ItemList = ({services}) => {
 
   return (
-    <Item services={services}/>
-  );
-
+    <div>
+        {
+          services.map((service)=>{
+            return(
+              <Item key={service.id} service={service}/>
+            )
+          })
+        }
+    </div>
+  )
 }
 
-export default ItemList;
+export default ItemList
+
+

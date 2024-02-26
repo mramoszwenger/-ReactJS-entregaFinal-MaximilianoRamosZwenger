@@ -7,6 +7,7 @@ import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
 
 function App() {
+
   return (
     <>
     <BrowserRouter>
@@ -15,20 +16,18 @@ function App() {
 
       <Routes>
 
-        <Route path='/' element={<ItemListContainer greeting={"Soluciones para Potenciar tu Negocio"}/>}/>
-        <Route path='/nosotros' element={<Error/>}/>
-        <Route path='/contacto' element={<Error/>}/>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/categoria/:categoryId' element={<ItemListContainer/>}/>
         <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
-        <Route path='categoria/:nombre' element={<ItemDetailContainer/>}/>
         <Route path='*' element={<Error/>}/>
-
+        
       </Routes>
 
       <Footer/>
-
+      
     </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

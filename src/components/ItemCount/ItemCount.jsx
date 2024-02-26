@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
+import './ItemCount.css';
 
-const ItemCount = ({initial,category}) => {
+const ItemCount = ({initial,unit}) => {
 
     const [contador,setContador] = useState(1);
 
     const incrementar = () => {
         setContador(contador+1)
     }
-    
+
     const decrementar = () => {
         if(contador > initial){
             setContador(contador-1)
@@ -15,17 +16,19 @@ const ItemCount = ({initial,category}) => {
     }
 
     const agregarCarrito = () => {
-        alert("Se agregaron " + contador + " " + category)
+        alert("Se agregaron "+ contador + " " + unit)
     }
 
   return (
-    <div>
-        <p>{category}: {contador}</p>
-        <button onClick={decrementar}>-</button>
-        <button onClick={agregarCarrito}>Agregar Servicio</button>
-        <button onClick={incrementar}>+</button>
+    <div className="itemCount__container">
+        <p className="itemCount__value">{unit}: {contador}</p>
+        <div className="itemCount__buttons">
+            <button className="itemCount__button" onClick={decrementar}>-</button>
+            <button className="itemCount__button" onClick={agregarCarrito}>AGREGAR SERVICIOS</button>
+            <button className="itemCount__button" onClick={incrementar}>+</button>
+        </div>
     </div>
   )
 }
 
-export default ItemCount
+export default ItemCount;

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState,useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 
@@ -6,25 +6,27 @@ const ItemDetailContainer = () => {
 
   const [service,setService] = useState([]);
 
-  const {id} = useParams();
+  const {id} = useParams()
 
-    useEffect(() => {
-
+    useEffect(()=>{
+        
       const fetchData = async () => {
-        try {
-          const response = await fetch("./services.json");
-          const data = await response.json()
-          const service = data.find((s)=>s.id == id)
-          setService(service)
-        }catch(error){
-          console.log("Error en el fetch " + error)
-        }
+          try {
+              const response = await fetch("/services.json");
+              const data = await response.json()
+              const serv = data.find((p)=>p.id == id)
+              setService(serv)
+          }catch(error){
+              console.log("Error en el fetch " + error)
+          }
       }
 
       fetchData()
 
-    },[])
+  },[])
 
+  console.log(service)
+    
   return (
     <div>
       <ItemDetail service={service}/>

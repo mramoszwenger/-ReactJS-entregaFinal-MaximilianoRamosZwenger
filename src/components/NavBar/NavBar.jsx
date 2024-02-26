@@ -26,9 +26,9 @@ const NavBar = () => {
                 </Nav.Item>
                 <Nav.Item>
                   <NavDropdown title="Servicios" id="navbarDropdown" align="end">
-                    <NavDropdown.Item><NavLink to={'categoria/administracion-sitemas'}>Administración de Sistemas</NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to={'categoria/redes-datos'}>Redes de Datos y Telecomunicaciones</NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to={'categoria/cloud-computing'}>Soluciones en la Nube</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to={'categoria/administracion sistemas'}>Administración de Sistemas</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to={'categoria/infraestructura redes'}>Redes de Datos y Telecomunicaciones</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to={'categoria/cloud computing'}>Soluciones en la Nube</NavLink></NavDropdown.Item>
                   </NavDropdown>
                 </Nav.Item>
                 <Nav.Item>
