@@ -28,21 +28,21 @@
       margin-top: 25px;
     }
   
-    .itemList__subContainer {
-      display: flex;
-      margin: 0 100px 0 100px;
-    }
-  
     @media screen and (max-width: 768px) {
+
+      .itemList__container {
+        padding-top: 15px;
+      }
+
       .itemList__content {
           max-width: 80%;
       }
     
       .itemList__content h2 {
-          font-size: 36px;
+          font-size: 28px;
       }
     
       .itemList__content p {
-          font-size: 20px;
+          font-size: 16px;
       }
     }

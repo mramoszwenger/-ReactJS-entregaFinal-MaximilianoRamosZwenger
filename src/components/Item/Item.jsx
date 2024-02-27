@@ -1,5 +1,5 @@
 import React from 'react'
-import './item.css'
+import './Item.css'
 import { Link } from 'react-router-dom'
 
 const Item = ({service}) => {
@@ -8,9 +8,9 @@ const Item = ({service}) => {
     <Link to={`/detalle/${service.id}`}>
 
       <div className='global__itemContainer'>
-        <div className="row">
-          <div key={service.id} className="col-md-4 mb-4 text-center">
-            <div className="card h-100 itemList__services__card">
+        <div className='itemList__cardContainer'>
+          <div key={service.id} className="text-center">
+            <div className="card itemList__services__card">
               <div className="card-body">
                 <img src={service.img} alt={service.nombre} className='itemList__service__img'/>
                 <h3 className='itemList__services__name'>{service.nombre}</h3>
@@ -20,7 +20,7 @@ const Item = ({service}) => {
         </div>
       </div>
 
-    </Link>   
+    </Link>
   )
 }
 

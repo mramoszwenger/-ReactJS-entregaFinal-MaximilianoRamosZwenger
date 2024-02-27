@@ -12,6 +12,7 @@ const NavBar = () => {
       <>
         <Navbar expand="lg" bg="light" id="principal-nav">
           <Container>
+            
             <NavLink to={'/'}><Navbar.Brand className="animate__animated animate__bouncein">
               <img src="/src/assets/img/logotipoEmpresa.png" alt="logo-empresa" className="company__logo"/>
             </Navbar.Brand></NavLink>

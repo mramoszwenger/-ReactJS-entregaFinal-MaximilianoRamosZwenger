@@ -56,16 +56,16 @@
 
     .itemDetail__container {
         padding: 25px 25px 25px 25px;
-        margin-bottom: 50px;
+        margin: 0 15px 50px 15px;
     }
 
     .itemDetail__title {
-        font-size: 24px;
+        font-size: 22px;
         margin-bottom: 25px;
     }
 
     .itemDetail__price {
-        font-size: 18px;
+        font-size: 22px;
         margin: -15px 0 15px 0;
         text-align: center;
     }
@@ -78,7 +78,7 @@
     }
 
     .itemDetail__countContainer {
-        margin-left: 0px;
+        margin: 15px 0 0 0;
         display: flex;
         align-items: center;
     }

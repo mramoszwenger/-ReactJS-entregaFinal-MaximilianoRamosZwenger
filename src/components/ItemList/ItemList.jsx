@@ -1,10 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item';
+import './ItemList.css'
 
 const ItemList = ({services}) => {
 
   return (
-    <div>
+      <div className='itemListContainer'>
         {
           services.map((service)=>{
             return(
@@ -12,7 +13,7 @@ const ItemList = ({services}) => {
             )
           })
         }
-    </div>
+      </div>
   )
 }
 

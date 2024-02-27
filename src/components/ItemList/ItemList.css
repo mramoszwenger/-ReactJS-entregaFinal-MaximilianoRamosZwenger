@@ -1,0 +1,16 @@
+.itemListContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .itemListContainer{
+        display: inline;
+        padding: 0;
+    }
+}

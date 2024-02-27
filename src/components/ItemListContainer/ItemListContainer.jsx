@@ -45,11 +45,9 @@ const ItemListContainer = () => {
         </div>
 
         <div>
-            <div>
-              {
+            {
                 services.length == 0 ? <h3 className='text-center'>No hay servicios para mostrar...</h3> : <ItemList services={services}/>
-              }
-            </div>
+            }
         </div>
 
     </div>

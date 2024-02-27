@@ -5,7 +5,8 @@
 }
   
 .itemList__services__card {
-    padding: 50px 25px 50px 25px;
+    padding: 50px 10px 50px 10px;
+
 }
     
 .itemList__services__name  {
@@ -20,4 +21,20 @@
     height: auto;
     border-radius: 5px;
     margin-bottom: 25px;
+}
+
+.itemList__cardContainer {
+    display: inline
+}
+
+@media screen and (max-width: 768px) {
+
+    .itemList__services__card {
+        padding: 10px 25px 0 25px;
+        height: 275px;
+    }
+
+    .global__itemContainer {
+        padding: 10px;
+    }
 }
