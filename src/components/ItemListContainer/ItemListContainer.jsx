@@ -1,6 +1,6 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
-import './itemListContainer.css'
+import './itemListContainer.css';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -44,8 +44,8 @@ const ItemListContainer = () => {
             </div>
         </div>
 
-        <div className="itemList__subContainer">
-            <div className="row">
+        <div>
+            <div>
               {
                 services.length == 0 ? <h3 className='text-center'>No hay servicios para mostrar...</h3> : <ItemList services={services}/>
               }
