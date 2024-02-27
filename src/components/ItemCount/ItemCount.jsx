@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import './ItemCount.css';
 
 const ItemCount = ({initial,unit}) => {
