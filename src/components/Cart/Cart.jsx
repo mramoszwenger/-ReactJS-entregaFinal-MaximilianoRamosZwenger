@@ -12,7 +12,7 @@ const Cart = () => {
         {cart.length == 0 ? <>
         <h4>No hay servicios agregados</h4>
         <Link to={"/"}><button>Volver al Inicio</button></Link>
-        </> : <h4>Lista de servicios</h4>
+        </> : <h4>Mapeo de servicios agregados</h4>
         }
     </div>
   )
