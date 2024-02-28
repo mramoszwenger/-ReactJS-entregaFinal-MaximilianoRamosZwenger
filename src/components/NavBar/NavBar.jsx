@@ -35,10 +35,11 @@ const NavBar = () => {
                 <Nav.Item>
                   <NavLink to={'/contacto'}>Contacto</NavLink>
                 </Nav.Item>
+                <Nav.Item>
+                  <CartWidget/>
+                </Nav.Item>
               </Nav>
             </Navbar.Collapse>
-
-            <CartWidget/>
 
           </Container>
         </Navbar>

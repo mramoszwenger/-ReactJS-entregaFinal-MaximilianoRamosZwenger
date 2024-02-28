@@ -1,10 +1,12 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/NavBar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
+import CartProvider from './context/CartContex';
+import Cart from './components/Cart/Cart';
 
 function App() {
 
@@ -12,18 +14,23 @@ function App() {
     <>
     <BrowserRouter>
 
-      <NavBar/>
+      <CartProvider>
 
-      <Routes>
+        <NavBar/>
 
-        <Route path='/' element={<ItemListContainer/>}/>
-        <Route path='/categoria/:categoryId' element={<ItemListContainer/>}/>
-        <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
-        <Route path='*' element={<Error/>}/>
-        
-      </Routes>
+        <Routes>
 
-      <Footer/>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/categoria/:category' element={<ItemListContainer/>}/>
+          <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
+          <Route path='/carrito' element={<Cart/>}/>
+          <Route path='*' element={<Error/>}/>
+          
+        </Routes>
+
+        <Footer/>
+
+      </CartProvider>
       
     </BrowserRouter>
     </>

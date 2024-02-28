@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
 
     const [services,setServices] = useState([]);
-    const {categoryId} = useParams()
+    const {category} = useParams()
 
     useEffect(()=>{
         
@@ -15,8 +15,8 @@ const ItemListContainer = () => {
                 const response = await fetch("/services.json");
                 const data = await response.json()
 
-                if(categoryId){
-                    const filteredServices = data.filter((s) => s.categoria == categoryId)
+                if(category){
+                    const filteredServices = data.filter((s) => s.categoria == category)
                     setServices(filteredServices)
                 }else{
                     setServices(data)
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
 
         fetchData()
 
-    },[categoryId])
+    },[category])
 
   return (
     <div className='global__itemContainer'>
