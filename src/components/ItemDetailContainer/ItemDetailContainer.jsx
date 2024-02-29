@@ -25,8 +25,6 @@ const ItemDetailContainer = () => {
       fetchData()
 
   },[])
-
-  console.log(service)
     
   return (
     <div className='itemDetali__container'>

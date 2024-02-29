@@ -5,28 +5,44 @@ export const CartContex = createContext()
 const CartProvider = ({children}) => {
 
     const [cart,setCart] = useState([])
-    const [total,setTotal] = useState(0)
-    const [totalCount,setTotalCount] = useState(0)
 
     const addService = (servicio,cantidad) => {
-        console.log(servicio)
-        console.log(cantidad)
+        setCart([...cart, { servicio, cantidad }]);
+
+        if (existingItem !== -1) {
+            const updatedCart = [...cart];
+            updatedCart[existingItem].cantidad += cantidad;
+            setCart(updatedCart);
+        } else {
+            setCart([...cart, { servicio, cantidad }]);
+        }
     }
 
-    const removeService = () => {}
+    const removeService = (serviceId) => {
+        const updatedCart = cart.filter(item => item.servicio.id !== serviceId);
+        setCart(updatedCart);
+    }
 
-    const emptyCart = () => {}
+    const emptyCart = () => {
+        setCart([]);
+    }
 
-    const servicesCount = () => {}
+    const cartCount = () => {
+        return cart.reduce((count, item) => count + item.cantidad, 0);
+    }
 
-    const totalServices = () => {}
+    const totalServices = () => {
+        return cart.reduce((total, item) => total + (item.servicio.precio * item.cantidad), 0);
+    }
 
     return(
         <CartContex.Provider value={{
             cart,
-            total,
-            totalCount,
             addService,
+            removeService,
+            emptyCart,
+            cartCount,
+            totalServices
         }}>
             {children}
         </CartContex.Provider>

@@ -4,13 +4,13 @@ import { CartContex } from '../../context/CartContex';
 
 const CartWidget = () => {
 
-    const {totalCount} = useContext(CartContex)
+    const {cartCount} = useContext(CartContex)
 
     return (
         <div className="cart__widget__container">
             <img src="src/assets/img/carro-compra.png" alt="carrito" className="cart__icon"/>
-            {totalCount !== 0 && (
-            <p className="cart__count">{totalCount}</p>
+            {cartCount !== 0 && (
+            <p className="cart__count">{cartCount}</p>
             )}
         </div>
     );
