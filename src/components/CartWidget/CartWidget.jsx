@@ -10,9 +10,8 @@ const CartWidget = () => {
     return (
         <Link to="/carrito" className="cart__widget__container">
             <img src="src/assets/img/carro-compra.png" alt="carrito" className="cart__icon"/>
-            {cartCount !== 0 && <p className="cart__count">{cartCount}</p>}
+            {cartCount() !== 0 && <p className="cart__count">{cartCount()}</p>}
         </Link>
-
     );
 }
 
