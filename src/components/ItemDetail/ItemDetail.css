@@ -9,7 +9,6 @@
     border-radius: 5px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
 }
 
 .itemDetail__title {
@@ -19,16 +18,25 @@
     text-align: center;
 }
 
-.itemDetail__imageContainer {
+.itemDetail__flexContainer {
     display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+    flex-direction: row; /* Cambiado a fila para que la imagen esté a la izquierda */
+    justify-content: space-between;
+}
+
+.itemDetail__imageContainer {
+    order: 1; /* Cambiado el orden de la imagen */
 }
 
 .itemDetail__image {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     border-radius: 5px;
+}
+
+.itemDetail__infoContainer {
+    flex: 1;
+    margin-left: 50px; /* Ajuste del margen */
 }
 
 .itemDetail__price {
@@ -36,23 +44,50 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
-    margin-left: 90px;
 }
 
 .itemDetail__description {
     font-size: 16px;
     line-height: 1.5;
-    margin: 0 90px 20px 90px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
-.itemDetail__countContainer {
-    margin-left: 90px;
-    display: flex;
-    align-items: center;
+.itemDetail__countContainer a {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.itemDetail__countContainer a:hover {
+    background-color: #ff6600;
+    text-shadow: 2px 2px 4px #333333;
+    padding: 10px 22px;
 }
 
 @media screen and (max-width: 768px) {
+
+    .itemDetail__flexContainer {
+        flex-direction: column;
+    }
+
+    .itemDetail__imageContainer {
+        order: 2; /* Cambiado el orden de la imagen */
+        margin-bottom: 20px; /* Añadido margen inferior */
+    }
+
+    .itemDetail__image {
+        max-width: 100%;
+    }
+
+    .itemDetail__infoContainer {
+        margin-left: 0; /* Resetear el margen izquierdo */
+    }
 
     .itemDetail__container {
         padding: 25px 25px 25px 25px;
@@ -66,7 +101,7 @@
 
     .itemDetail__price {
         font-size: 22px;
-        margin: -15px 0 15px 0;
+        margin: 15px 0 15px 0;
         text-align: center;
     }
     

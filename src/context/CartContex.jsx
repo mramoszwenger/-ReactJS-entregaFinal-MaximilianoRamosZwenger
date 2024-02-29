@@ -7,16 +7,16 @@ const CartProvider = ({children}) => {
     const [cart,setCart] = useState([])
 
     const addService = (servicio,cantidad) => {
-        setCart([...cart, { servicio, cantidad }]);
+        const existingItemIndex = cart.findIndex((item) => item.servicio.id === servicio.id);
 
-        if (existingItem !== -1) {
-            const updatedCart = [...cart];
-            updatedCart[existingItem].cantidad += cantidad;
-            setCart(updatedCart);
+        if (existingItemIndex !== -1) {
+          const updatedCart = [...cart];
+          updatedCart[existingItemIndex].cantidad += cantidad;
+          setCart(updatedCart);
         } else {
-            setCart([...cart, { servicio, cantidad }]);
+          setCart([...cart, { servicio, cantidad }]);
         }
-    }
+      }
 
     const removeService = (serviceId) => {
         const updatedCart = cart.filter(item => item.servicio.id !== serviceId);

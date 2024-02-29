@@ -1,6 +1,7 @@
 .cart__widget__container {
     display: flex;
     align-items: center;
+    text-decoration: none;
     margin: 0px 0 0 15px;
 }
 
