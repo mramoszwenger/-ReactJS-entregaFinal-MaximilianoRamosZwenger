@@ -2,10 +2,6 @@ import React from 'react';
 
 const CartItem = ({servicio,removeService}) => {
 
-    const handleRemove = () => {
-        removeService(item.servicio.id);
-    }
-
     return (
         <div>
             <h3>{servicio.servicio.nombre}</h3>
