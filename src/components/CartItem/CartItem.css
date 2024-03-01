@@ -56,3 +56,9 @@
     color: #ff6600;
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+    .cartItem__container {
+        margin: 15px;
+    }
+} 

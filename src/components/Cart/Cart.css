@@ -1,7 +1,7 @@
 .cart__emptyContainer {
     text-align: center;
     background-color: #ffffff;
-    padding: 100px 0 100px 0;
+    padding: 100px 25px 100px 25px;
     margin: 25px 150px 50px 150px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -91,11 +91,29 @@
 @media screen and (max-width: 768px) {
 
     .cart__emptyContainer {
-    margin: 25px 50px 50px 50px;
+        margin: 25px 25px 50px 50px;
+    }
+
+    .cart__emptyTitle {
+        font-size: 18px;
     }
 
     .cart__backButton {
         width: 90%;
         margin: 25px 15px 0 15px;
+    }
+
+    .cart__summaryContainer {
+        width: 92%;
+        margin: 15px;
+        text-align: center;
+    }
+
+    .cart__itemsContainer {
+        display: inline-block;
+    }
+
+    .cart__requestButton {
+        margin-top: 35px;
     }
 }

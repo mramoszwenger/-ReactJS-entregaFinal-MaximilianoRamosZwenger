@@ -38,4 +38,9 @@
     .global__itemContainer {
         padding: 10px;
     }
+
+    .itemList__services__name  {
+        font-size: 20px;
+        padding: 0 25px 0 25px;
+    }
 }
