@@ -32,8 +32,15 @@ const CartProvider = ({children}) => {
     }
 
     const totalServices = () => {
-        return cart.reduce((total, item) => total + (item.servicio.precio * item.cantidad), 0);
-    }
+        return cart.reduce((total, item) => {
+
+          const serviceCost = item.cantidad === 1
+            ? item.servicio.preciobase
+            : (item.servicio.preciobase - item.servicio.precio) + item.cantidad * item.servicio.precio;
+    
+          return total + serviceCost;
+        }, 0);
+      }
 
     return(
         <CartContex.Provider value={{

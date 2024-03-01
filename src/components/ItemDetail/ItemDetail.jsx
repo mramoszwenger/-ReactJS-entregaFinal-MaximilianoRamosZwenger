@@ -21,7 +21,7 @@ const ItemDetail = ({service}) => {
             <div className="itemDetail__flexContainer">
                 <img className="itemDetail__image" src={service.img} alt={service.nombre} />
                 <div className="itemDetail__infoContainer">
-                    <h4 className="itemDetail__price">Desde ${service.precio}</h4>
+                    <h4 className="itemDetail__price">Desde ${service.preciobase}</h4>
                     <p className="itemDetail__description">{service.descripcion}</p>
                     <div className="itemDetail__countContainer">
                         {cart ? <Link to={'/carrito'}>Ver Carrito</Link> : <ItemCount initial={1} unit={service.unidades} onAdd={onAdd}/>}
