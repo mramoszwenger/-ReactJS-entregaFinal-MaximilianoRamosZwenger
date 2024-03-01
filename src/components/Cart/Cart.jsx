@@ -23,6 +23,7 @@ const Cart = () => {
                   {cart.map((s) => (
                       <CartItem key={s.servicio.id} servicio={s} removeService={removeService} />
                   ))}
+                  <button className='cart__emptyButton' onClick={emptyCart}>Vaciar Carrito</button>
                 </>
             )}
         </div>
@@ -31,8 +32,7 @@ const Cart = () => {
             <div className="cart__summaryContainer">
                 <h3 className='cart__summaryTitle'>Resumen de Servicios a Contratar</h3>
                 <h4 className='cart__summaryTotal'>Costo mensual estimado: ${totalServices()}</h4>
-                <button className='cart__summaryButton'>Solicitar Servicios</button>
-                <button className='cart__summaryButton' onClick={emptyCart}>Vaciar Carrito</button>
+                <button className='cart__requestButton'>Solicitar Servicios</button>
             </div>
         )}
     </div>

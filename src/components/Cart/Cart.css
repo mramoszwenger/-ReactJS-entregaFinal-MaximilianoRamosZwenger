@@ -60,14 +60,30 @@
     margin-top: 25px;
 }
 
-.cart__summaryButton {
+.cart__requestButton {
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 15px 10px 15px;
+    margin-top: 70px;
+    width: 100%;
+}
+
+.cart__requestButton:hover {
+    background-color: #ff6600;
+}
+
+.cart__emptyButton {
     font-size: 12px;
     background-color: #ffffff00;
     color: #333333;
     border: none;
     cursor: pointer;
+    margin-left: 150px;
 }
 
-.cart__summaryButton:hover {
+.cart__emptyButton:hover {
     color: #ff6600;
+    font-weight: bold;
 }

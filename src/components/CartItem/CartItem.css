@@ -44,16 +44,15 @@
     margin-top: 8px;
 }
 
-.cartItem__button {
-    background-color: #e44d26;
-    color: #fff;
-    padding: 8px 16px;
+.cartItem__cleanButton {
+    font-size: 12px;
+    background-color: #ffffff00;
+    color: #333333;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.cartItem__button:hover {
-    background-color: #c0331c;
+.cartItem__cleanButton:hover {
+    color: #ff6600;
+    font-weight: bold;
 }
