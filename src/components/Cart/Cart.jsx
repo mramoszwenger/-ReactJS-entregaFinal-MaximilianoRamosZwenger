@@ -13,8 +13,10 @@ const Cart = () => {
         <div className="cart__items">
             {cart.length === 0 ? (
                 <>
-                    <h4>No hay servicios agregados</h4>
-                    <Link to={"/"}><button>Volver al Inicio</button></Link>
+                    <div className='cart__emptyContainer'>
+                        <h4 className='cart__emptyTitle'>No se han agregado servicios</h4>
+                        <Link to={"/"}><button className='cart__backButton'>Volver al Inicio</button></Link>
+                    </div>
                 </>
             ) : (
                 <>
@@ -27,8 +29,9 @@ const Cart = () => {
 
         {cart.length > 0 && (
             <div className="cart__summaryContainer">
-                <h3>Resumen Servicios a Contratar</h3>
-                <h4 className='cart__summaryTotal'>Costo estimado: ${totalServices()}</h4>
+                <h3 className='cart__summaryTitle'>Resumen de Servicios a Contratar</h3>
+                <h4 className='cart__summaryTotal'>Costo mensual estimado: ${totalServices()}</h4>
+                <button className='cart__summaryButton'>Solicitar Servicios</button>
                 <button className='cart__summaryButton' onClick={emptyCart}>Vaciar Carrito</button>
             </div>
         )}
