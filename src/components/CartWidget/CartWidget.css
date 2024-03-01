@@ -23,9 +23,9 @@
 }
 
 .cart__count:hover {
-    font-size: 18px;
+    font-size: 12px;
     background-color: #ff6600;
-    padding: 7px 12px;
+    padding: 5px 9px;
     box-shadow: 2px 2px 4px #333333;
 }
 

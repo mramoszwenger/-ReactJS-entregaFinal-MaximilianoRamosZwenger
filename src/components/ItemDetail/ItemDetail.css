@@ -20,12 +20,12 @@
 
 .itemDetail__flexContainer {
     display: flex;
-    flex-direction: row; /* Cambiado a fila para que la imagen esté a la izquierda */
+    flex-direction: row;
     justify-content: space-between;
 }
 
 .itemDetail__imageContainer {
-    order: 1; /* Cambiado el orden de la imagen */
+    order: 1;
 }
 
 .itemDetail__image {
@@ -36,7 +36,7 @@
 
 .itemDetail__infoContainer {
     flex: 1;
-    margin-left: 50px; /* Ajuste del margen */
+    margin-left: 50px;
 }
 
 .itemDetail__price {
@@ -77,8 +77,8 @@
     }
 
     .itemDetail__imageContainer {
-        order: 2; /* Cambiado el orden de la imagen */
-        margin-bottom: 20px; /* Añadido margen inferior */
+        order: 2;
+        margin-bottom: 20px;
     }
 
     .itemDetail__image {
@@ -86,7 +86,7 @@
     }
 
     .itemDetail__infoContainer {
-        margin-left: 0; /* Resetear el margen izquierdo */
+        margin-left: 0;
     }
 
     .itemDetail__container {
