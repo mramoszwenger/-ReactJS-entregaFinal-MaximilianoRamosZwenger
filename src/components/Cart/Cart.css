@@ -87,3 +87,15 @@
     color: #ff6600;
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+
+    .cart__emptyContainer {
+    margin: 25px 50px 50px 50px;
+    }
+
+    .cart__backButton {
+        width: 90%;
+        margin: 25px 15px 0 15px;
+    }
+}
