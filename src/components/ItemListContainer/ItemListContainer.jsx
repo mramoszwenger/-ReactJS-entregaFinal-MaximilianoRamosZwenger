@@ -7,6 +7,7 @@ const ItemListContainer = () => {
 
     const [services,setServices] = useState([]);
     const {category} = useParams()
+    const [showItemList, setShowItemList] = useState(true);
 
     useEffect(()=>{
         
@@ -18,8 +19,10 @@ const ItemListContainer = () => {
                 if(category){
                     const filteredServices = data.filter((s) => s.categoria == category)
                     setServices(filteredServices)
+                    setShowItemList(false)
                 }else{
                     setServices(data)
+                    setShowItemList(true)
                 }
   
             }catch(error){
@@ -34,6 +37,7 @@ const ItemListContainer = () => {
   return (
     <div className='global__itemContainer'>
 
+        {showItemList && (
         <div className="itemList__container">
             <div className="itemList__content">
                 <h2 className='itemList__title'>Soluciones para Potenciar tu Negocio</h2>
@@ -43,6 +47,7 @@ const ItemListContainer = () => {
                 <p>Ayudamos a cuidar de una herramienta fundamental para lograr el crecimiento de los negocios e impulsamos a avanzar en su desarrollo a través de la innovación y de una asesoraría personalizada, concientizando en el uso responsable y aprovechamiento eficiente de los dispositivos tecnológicos.</p>
             </div>
         </div>
+        )}
 
         <div>
             {

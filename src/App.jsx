@@ -7,6 +7,7 @@ import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
 import CartProvider from './context/CartContex';
 import Cart from './components/Cart/Cart';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<ItemListContainer/>}/>
           <Route path='/categoria/:category' element={<ItemListContainer/>}/>
           <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
+          <Route path='/contacto' element={<ContactForm/>}/>
           <Route path='/carrito' element={<Cart/>}/>
           <Route path='*' element={<Error/>}/>
           
