@@ -31,6 +31,13 @@ const Cart = () => {
         {cart.length > 0 && (
             <div className="cart__summaryContainer">
                 <h3 className='cart__summaryTitle'>Resumen de Servicios a Contratar</h3>
+                <div className='cart__summaryServices'>
+                    <ul>
+                        {cart.map((s) => (
+                            <li key={s.servicio.id} className='list__summaryServices'>{s.servicio.nombre} ({s.cantidad})</li>
+                        ))}
+                    </ul>
+                </div>
                 <h4 className='cart__summaryTotal'>Costo mensual estimado: ${totalServices()}</h4>
                 <button className='cart__requestButton'>Solicitar Servicios</button>
             </div>

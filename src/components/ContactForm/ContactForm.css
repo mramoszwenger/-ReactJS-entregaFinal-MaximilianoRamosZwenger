@@ -1,0 +1,42 @@
+.contact__container {
+    background-color: #f7f7f7;
+    height: 100vh;
+    padding-top: 25px;
+}
+
+.contact__subContainer {
+    width: 75% !important;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 100px;
+}
+
+.contact__title {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.contact__description {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    visibility: hidden;
+}
+
+.form-control {
+    margin-top: -25px;
+}
+
+.submit__button {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    border: none !important;
+    background-color: #333333 !important;
+    text-transform: uppercase;
+}
+
+.submit__button:hover {
+    background-color: #ff6600 !important;
+}

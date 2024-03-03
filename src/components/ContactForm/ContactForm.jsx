@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ContactForm.css'
 
 const ContactForm = () => {
   const [nombre, setNombre] = useState('');
@@ -81,72 +82,49 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container-fluid contact">
-      <div className="contact__head row">
-        <div className="col-lg-8 mx-auto text-center">
-          <h2 className="contact__title">Contactanos</h2>
-          <p className="contact__description">Dejanos tus datos y en breve alguien de nuestro equipo se pondrá en contacto contigo.</p>
+    <div className='contact__container'>
+      
+      <div className="container-fluid contact__subContainer">
+      
+        <div className="contact__head row">
+          <div className="col-lg-8 mx-auto text-center">
+            <h2 className="contact__title">Contactanos</h2>
+            <p className="contact__description">Dejanos tus datos y en breve alguien de nuestro equipo se pondrá en contacto contigo.</p>
+          </div>
         </div>
-      </div>
 
-      <div className="contact__background">
-        <form className="contact__form needs-validation" action="/api/mailer" method="post" id="formularioWeb" noValidate onSubmit={handleSubmit}>
+        <div className="contact__background">
 
-          <div className="mb-3">
-            <label htmlFor="nombre" className="form-label">
-              Nombre y Apellido
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="nombre"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-            />
-            {/* Mensaje de error */}
-            <div className="invalid-feedback">Por favor ingresa tu nombre. No se permiten números.</div>
-          </div>
+          <form className="contact__form needs-validation" action="/api/mailer" method="post" id="formularioWeb" noValidate onSubmit={handleSubmit}>
 
-          <div className="mb-3">
-            <label htmlFor="correo" className="form-label">
-              Correo electrónico
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="correo"
-              value={correo}
-              onChange={(e) => setCorreo(e.target.value)}
-              required
-            />
-            {/* Mensaje de error */}
-            <div className="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
-          </div>
+            <div className="mb-3">
+              <label htmlFor="nombre" className="form-label">Nombre y Apellido</label>
+              <input type="text" className="form-control" id="nombre" placeholder='Su nombre y apellido' value={nombre} onChange={(e) => setNombre(e.target.value)} required/>
+              {/* Mensaje de error */}
+              <div className="invalid-feedback">Por favor ingresa tu nombre. No se permiten números.</div>
+            </div>
 
-          <div className="mb-3">
-            <label htmlFor="mensaje" className="form-label">
-              Mensaje
-            </label>
-            <textarea
-              className="form-control"
-              id="mensaje"
-              rows="4"
-              value={mensaje}
-              onChange={(e) => setMensaje(e.target.value)}
-              required
-            ></textarea>
-            {/* Mensaje de error */}
-            <div className="invalid-feedback">Por favor ingresa tu mensaje.</div>
-          </div>
+            <div className="mb-3">
+              <label htmlFor="correo" className="form-label">Correo electrónico</label>
+              <input type="email" className="form-control" id="correo" placeholder="Su correo electronico" value={correo} onChange={(e) => setCorreo(e.target.value)} required/>
+              {/* Mensaje de error */}
+              <div className="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+            </div>
 
-          <div className="text-center">
-            <button type="submit" className="btn btn-primary">
-              Enviar Mensaje
-            </button>
-          </div>
+            <div className="mb-3">
+              <label htmlFor="mensaje" className="form-label">Mensaje</label>
+                <textarea className="form-control" id="mensaje" placeholder="Su mensaje..." rows="7" value={mensaje}onChange={(e) => setMensaje(e.target.value)} required></textarea>
+              {/* Mensaje de error */}
+              <div className="invalid-feedback">Por favor ingresa tu mensaje.</div>
+            </div>
 
-        </form>
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary submit__button">Contactar</button>
+            </div>
+
+          </form>
+
+        </div>
       </div>
     </div>
   );

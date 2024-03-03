@@ -39,7 +39,7 @@
 
 .cart__summaryContainer {
     width: 30%;
-    height: 30%;
+    height: min-content;
     text-align: left;
     justify-content: space-between;
     background-color: #ffffff;
@@ -49,15 +49,25 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    text-align: center;
 }
 
 .cart__summaryTitle {
     font-size: 20px;
+    margin-top: 25px;
+}
+
+.list__summaryServices {
+    list-style: none;
+    text-align: left;
 }
 
 .cart__summaryTotal {
     font-size: 16px;
     margin-top: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
 }
 
 .cart__requestButton {
@@ -66,7 +76,7 @@
     border-radius: 5px;
     color: #ffffff;
     padding: 10px 15px 10px 15px;
-    margin-top: 70px;
+    margin-bottom: 15px;
     width: 100%;
 }
 
