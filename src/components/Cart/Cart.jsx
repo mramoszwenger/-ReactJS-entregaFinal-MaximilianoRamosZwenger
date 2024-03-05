@@ -39,7 +39,7 @@ const Cart = () => {
                     </ul>
                 </div>
                 <h4 className='cart__summaryTotal'>Costo mensual estimado: ${totalServices()}</h4>
-                <button className='cart__requestButton'>Solicitar Servicios</button>
+                <Link to={"/checkout"}><button className='cart__requestButton'>Solicitar Servicios</button></Link>
             </div>
         )}
     </div>

@@ -7,6 +7,7 @@ import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
 import CartProvider from './context/CartContex';
 import Cart from './components/Cart/Cart';
+import CheckOut from './components/CheckOut/CheckOut';
 import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
           <Route path='/contacto' element={<ContactForm/>}/>
           <Route path='/carrito' element={<Cart/>}/>
+          <Route path='/checkout' element={<CheckOut/>}/>
           <Route path='*' element={<Error/>}/>
           
         </Routes>

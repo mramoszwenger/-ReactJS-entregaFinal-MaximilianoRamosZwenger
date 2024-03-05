@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
+import { getFirestore,doc,getDoc } from 'firebase/firestore';
 import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
@@ -11,18 +12,16 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
         
-      const fetchData = async () => {
-          try {
-              const response = await fetch("/services.json");
-              const data = await response.json()
-              const serv = data.find((p)=>p.id == id)
-              setService(serv)
-          }catch(error){
-              console.log("Error en el fetch " + error)
-          }
-      }
+      const db = getFirestore()
 
-      fetchData()
+      const newDoc = doc(db,"services",id)
+
+      getDoc(newDoc).then(ans => {
+        const data = ans.data()
+        const newService = {id: ans.id,...data}
+        setService(newService)
+      })
+      .catch(error => console.log(error))
 
   },[])
     

@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import './itemListContainer.css';
 import { useParams } from 'react-router-dom';
+import { collection,getDoc,getDocs,getFirestore,query,where } from 'firebase/firestore';
 
 const ItemListContainer = () => {
 
@@ -11,26 +12,19 @@ const ItemListContainer = () => {
 
     useEffect(()=>{
         
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/services.json");
-                const data = await response.json()
+        const db = getFirestore()
 
-                if(category){
-                    const filteredServices = data.filter((s) => s.categoria == category)
-                    setServices(filteredServices)
-                    setShowItemList(false)
-                }else{
-                    setServices(data)
-                    setShowItemList(true)
-                }
-  
-            }catch(error){
-                console.log("Error en el fetch " + error)
-            }
-        }
+        const ourServices = category ? query(collection(db,"services"),where("categoria","==",category)) : collection(db,"services")
 
-        fetchData()
+        getDocs(ourServices).then((ans) => {
+            const newServices = ans.docs.map((doc) => {
+                const data = doc.data()
+                return {id: doc.id,...data}
+            })
+            setServices(newServices)
+        })
+
+        setShowItemList(!category);
 
     },[category])
 
