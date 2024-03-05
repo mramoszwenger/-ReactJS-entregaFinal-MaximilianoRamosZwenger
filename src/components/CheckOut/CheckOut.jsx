@@ -1,5 +1,6 @@
 import React, { useState,useContext } from 'react';
-import { collection,addDoc,updateDoc,doc,getDoc, getFirestore } from 'firebase/firestore';
+import { db } from '../../firebase/config';
+import { collection,addDoc,updateDoc,doc,getDoc } from 'firebase/firestore';
 import { CartContex } from '../../context/CartContex';
 
 const CheckOut = () => {
@@ -26,8 +27,6 @@ const CheckOut = () => {
             setError("El Correo Electrónico no coincide")
             return;
         }
-
-        const db = getFirestore()
 
         const orden = {
             items: cart.map((s) => ({

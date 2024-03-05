@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import { getFirestore,doc,getDoc } from 'firebase/firestore';
+import { db } from '../../firebase/config';
+import { doc,getDoc } from 'firebase/firestore';
 import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
@@ -12,8 +13,6 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
         
-      const db = getFirestore()
-
       const newDoc = doc(db,"services",id)
 
       getDoc(newDoc).then(ans => {

@@ -2,7 +2,8 @@ import {useState,useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import './itemListContainer.css';
 import { useParams } from 'react-router-dom';
-import { collection,getDoc,getDocs,getFirestore,query,where } from 'firebase/firestore';
+import { db } from '../../firebase/config';
+import { collection,getDoc,getDocs,query,where } from 'firebase/firestore';
 
 const ItemListContainer = () => {
 
@@ -11,8 +12,6 @@ const ItemListContainer = () => {
     const [showItemList, setShowItemList] = useState(true);
 
     useEffect(()=>{
-        
-        const db = getFirestore()
 
         const ourServices = category ? query(collection(db,"services"),where("categoria","==",category)) : collection(db,"services")
 
