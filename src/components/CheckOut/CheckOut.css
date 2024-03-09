@@ -8,7 +8,7 @@
     margin: auto;
     padding: 20px;
     background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -27,19 +27,26 @@
     margin-bottom: 15px;
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
+.form__label {
+    display: none;
 }
 
-input {
+.input__container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.input__icon {
+    margin: 0 10px 0 10px;
+}
+
+.input__form {
     width: 100%;
     padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
+    border: none;
 }
 
 .checkout__button {
@@ -56,18 +63,16 @@ input {
     background-color: #ff6600 !important;
 }
 
-/* Estilos de mensajes de error y éxito */
-p {
+.error__message {
     margin-top: 10px;
     font-size: 14px;
 }
 
-p.error {
+.error__message.error {
     color: red;
 }
 
-/* Estilos del resumen de la orden */
-ul {
+.summary__checkout {
     list-style: none;
     padding: 0;
 }
@@ -75,36 +80,4 @@ ul {
 .list__summaryServices {
     font-size: 14px;
     margin-bottom: 5px;
-}
-
-.input-with-icon {
-    position: relative;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.input-container {
-    display: flex;
-    align-items: center;
-}
-
-.input-icon {
-    margin-right: 8px; /* Ajusta el espacio entre el icono y el texto del placeholder */
-}
-
-.input-container input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
