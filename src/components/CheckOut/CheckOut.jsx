@@ -14,19 +14,52 @@ const CheckOut = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [emailValidation, setEmailValidation] = useState('');
-    const [error, setError] = useState('');
+    const [nameError, setNameError] = useState('');
+    const [phoneError, setPhoneError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [generalError, setGeneralError] = useState('');
     const [orderId, setOrderId] = useState('');
+
+    const validateName = (value) => {
+        const regex = /^[A-Za-z\s]+$/;
+        return regex.test(value);
+    };
+
+    const validatePhone = (value) => {
+        const regex = /^[0-9]+$/;
+        return regex.test(value);
+    };
+
+    const validateEmail = (value) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(value);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        setNameError('');
+        setPhoneError('');
+        setEmailError('');
+        setGeneralError('');
+
         if (!name || !company || !phone || !email || !emailValidation) {
-            setError('Todos los campos son requeridos para poder procesar la solicitud');
+            setGeneralError('Todos los campos son requeridos para poder procesar la solicitud');
             return;
         }
 
-        if (email !== emailValidation) {
-            setError('El Correo Electrónico no coincide');
+        if (!validateName(name)) {
+            setNameError('Por favor, ingresa un nombre válido (solo letras y espacios).');
+            return;
+        }
+
+        if (!validatePhone(phone)) {
+            setPhoneError('Por favor, ingresa un número de teléfono válido (solo números).');
+            return;
+        }
+
+        if (email !== emailValidation || !validateEmail(email) || !validateEmail(emailValidation)) {
+            setEmailError('El Correo Electrónico no coincide o no es válido');
             return;
         }
 
@@ -52,13 +85,13 @@ const CheckOut = () => {
             .then(() => {
                 addDoc(collection(db, 'ordenes'), orden)
                     .then((docRef) => {
-                        setError('');
+                        setGeneralError('');
                         setOrderId(docRef.id);
                         emptyCart();
                     })
                     .catch((error) => {
                         console.log(error);
-                        setError('Se produjo un error al crear la orden');
+                        setGeneralError('Se produjo un error al crear la orden');
                     });
             });
     };
@@ -85,6 +118,7 @@ const CheckOut = () => {
                                 <FontAwesomeIcon icon={faUser} className="input__icon"/>
                                 <input name="name" type="text" className="input__form" placeholder="Tu Nombre y Apellido" onChange={(e) => setName(e.target.value)}/>
                             </div>
+                            {nameError && <p style={{ color: 'red' }} className='error__message'>{nameError}</p>}
                         </div>
 
                         <div>
@@ -101,6 +135,7 @@ const CheckOut = () => {
                                 <FontAwesomeIcon icon={faPhone} className="input__icon"/>
                                 <input name="phone" type="text" className="input__form" placeholder="Un Número de Contacto" onChange={(e) => setPhone (e.target.value)}/>
                             </div>
+                            {phoneError && <p style={{ color: 'red' }} className='error__message'>{phoneError}</p>}
                         </div>
 
                         <div>
@@ -117,11 +152,12 @@ const CheckOut = () => {
                                 <FontAwesomeIcon icon={faEnvelope} className="input__icon"/>
                                 <input name="emailValidation" type="email" className="input__form" placeholder="Confirma el Correo Electrónico" onChange={(e) => setEmailValidation (e.target.value)}/>
                             </div>
+                            {emailError && <p style={{ color: 'red' }} className='error__message'>{emailError}</p>}
                         </div>
 
                         <button type="submit" className="btn btn-primary mt-3 checkout__button">Solicitar Servicio/s</button>
 
-                        {error && <p style={{ color: 'red' }} className='error__message'>{error}</p>}
+                        {generalError && <p style={{ color: 'red' }} className='error__message'>{generalError}</p>}
 
                         {orderId && (
                             <p className='confirmation__message'>¡Gracias por confiar en nosotros! Tu número de control es: {orderId}</p>
