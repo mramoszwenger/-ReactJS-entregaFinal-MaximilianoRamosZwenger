@@ -54,7 +54,7 @@ const CheckOut = () => {
         }
 
         if (!validatePhone(phone)) {
-            setPhoneError('Por favor, ingresa un número de teléfono válido (solo números).');
+            setPhoneError('Por favor, ingresa un número de teléfono válido (solo números sin espacios).');
             return;
         }
 
@@ -101,7 +101,7 @@ const CheckOut = () => {
             <div className='checkout__formContainer'>
                 <h3 className="mb-4 checkout__title">Ingresa tus datos para completar la solicitud</h3>
 
-                <form onSubmit={handleSubmit} className="mb-4 checkout__form">
+                <div className='global__checkoutContainer'>
                     <ul className='summary__checkout'>
                         {cart.map((s) => (
                             <li key={s.servicio.id} className="list__summaryServices">
@@ -110,60 +110,63 @@ const CheckOut = () => {
                         ))}
                     </ul>
 
-                    <div className="form__group">
+                    <form onSubmit={handleSubmit} className="mb-4 checkout__form">
 
-                        <div>
-                            <label htmlFor="name" className="form__label">Nombre y Apellido</label>
-                            <div className="input__container">
-                                <FontAwesomeIcon icon={faUser} className="input__icon"/>
-                                <input name="name" type="text" className="input__form" placeholder="Tu Nombre y Apellido" onChange={(e) => setName(e.target.value)}/>
+                        <div className="form__group">
+
+                            <div>
+                                <label htmlFor="name" className="form__label">Nombre y Apellido</label>
+                                <div className="input__container">
+                                    <FontAwesomeIcon icon={faUser} className="input__icon"/>
+                                    <input name="name" type="text" className="input__form" placeholder="Tu Nombre y Apellido" onChange={(e) => setName(e.target.value)}/>
+                                </div>
+                                {nameError && <p style={{ color: 'red' }} className='error__message'>{nameError}</p>}
                             </div>
-                            {nameError && <p style={{ color: 'red' }} className='error__message'>{nameError}</p>}
-                        </div>
 
-                        <div>
-                            <label htmlFor="company" className="form__label">Empresa</label>
-                            <div className="input__container">
-                                <FontAwesomeIcon icon={faBriefcase} className="input__icon"/>
-                                <input name="company" type="text" className="input__form" placeholder="Nombre de la Empresa" onChange={(e) => setCompany(e.target.value)}/>
+                            <div>
+                                <label htmlFor="company" className="form__label">Empresa</label>
+                                <div className="input__container">
+                                    <FontAwesomeIcon icon={faBriefcase} className="input__icon"/>
+                                    <input name="company" type="text" className="input__form" placeholder="Nombre de la Empresa" onChange={(e) => setCompany(e.target.value)}/>
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label htmlFor="phone" className="form__label">Teléfono</label>
-                            <div className="input__container">
-                                <FontAwesomeIcon icon={faPhone} className="input__icon"/>
-                                <input name="phone" type="text" className="input__form" placeholder="Un Número de Contacto" onChange={(e) => setPhone (e.target.value)}/>
+                            <div>
+                                <label htmlFor="phone" className="form__label">Teléfono</label>
+                                <div className="input__container">
+                                    <FontAwesomeIcon icon={faPhone} className="input__icon"/>
+                                    <input name="phone" type="text" className="input__form" placeholder="Un Número de Contacto" onChange={(e) => setPhone (e.target.value)}/>
+                                </div>
+                                {phoneError && <p style={{ color: 'red' }} className='error__message'>{phoneError}</p>}
                             </div>
-                            {phoneError && <p style={{ color: 'red' }} className='error__message'>{phoneError}</p>}
-                        </div>
 
-                        <div>
-                            <label htmlFor="email" className="form__label">Correo</label>
-                            <div className="input__container">
-                                <FontAwesomeIcon icon={faEnvelope} className="input__icon"/>
-                                <input name="email" type="email" className="input__form" placeholder="Un Correo Electrónico" onChange={(e) => setEmail (e.target.value)}/>
+                            <div>
+                                <label htmlFor="email" className="form__label">Correo</label>
+                                <div className="input__container">
+                                    <FontAwesomeIcon icon={faEnvelope} className="input__icon"/>
+                                    <input name="email" type="email" className="input__form" placeholder="Un Correo Electrónico" onChange={(e) => setEmail (e.target.value)}/>
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label htmlFor="emailValidation" className="form__label">Correo</label>
-                            <div className="input__container">
-                                <FontAwesomeIcon icon={faEnvelope} className="input__icon"/>
-                                <input name="emailValidation" type="email" className="input__form" placeholder="Confirma el Correo Electrónico" onChange={(e) => setEmailValidation (e.target.value)}/>
+                            <div>
+                                <label htmlFor="emailValidation" className="form__label">Correo</label>
+                                <div className="input__container">
+                                    <FontAwesomeIcon icon={faEnvelope} className="input__icon"/>
+                                    <input name="emailValidation" type="email" className="input__form" placeholder="Confirma el Correo Electrónico" onChange={(e) => setEmailValidation (e.target.value)}/>
+                                </div>
+                                {emailError && <p style={{ color: 'red' }} className='error__message'>{emailError}</p>}
                             </div>
-                            {emailError && <p style={{ color: 'red' }} className='error__message'>{emailError}</p>}
+
+                            <button type="submit" className="btn btn-primary mt-3 checkout__button">Solicitar Servicio/s</button>
+
+                            {generalError && <p style={{ color: 'red' }} className='error__message'>{generalError}</p>}
+
+                            {orderId && (
+                                <p className='confirmation__message'>¡Gracias por confiar en nosotros! Tu número de control es: {orderId}</p>
+                            )}
                         </div>
-
-                        <button type="submit" className="btn btn-primary mt-3 checkout__button">Solicitar Servicio/s</button>
-
-                        {generalError && <p style={{ color: 'red' }} className='error__message'>{generalError}</p>}
-
-                        {orderId && (
-                            <p className='confirmation__message'>¡Gracias por confiar en nosotros! Tu número de control es: {orderId}</p>
-                        )}
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );

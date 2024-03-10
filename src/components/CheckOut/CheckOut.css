@@ -1,11 +1,21 @@
+.global__checkoutContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
 .checkout__container {
-    background-color: #f7f7f7;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     padding: 50px 0 50px 0;
 }
 
 .checkout__formContainer {
-    max-width: 600px;
-    margin: auto;
+
+
     padding: 20px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -21,6 +31,7 @@
 .checkout__form {
     display: flex;
     flex-direction: column;
+    width: 70%;
 }
 
 .form__group {
@@ -47,6 +58,7 @@
     width: 100%;
     padding: 8px;
     border: none;
+    font-size: 14px;
 }
 
 .checkout__button {
@@ -73,6 +85,7 @@
 }
 
 .summary__checkout {
+    width: 40%; /* Ajusta según tus necesidades */
     list-style: none;
     padding: 0;
 }
