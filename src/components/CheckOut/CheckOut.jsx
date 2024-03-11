@@ -19,6 +19,7 @@ const CheckOut = () => {
     const [emailError, setEmailError] = useState('');
     const [generalError, setGeneralError] = useState('');
     const [orderId, setOrderId] = useState('');
+    const [showForm, setShowForm] = useState(true);
 
     const validateName = (value) => {
         const regex = /^[A-Za-z\s]+$/;
@@ -88,6 +89,7 @@ const CheckOut = () => {
                         setGeneralError('');
                         setOrderId(docRef.id);
                         emptyCart();
+                        setShowForm(false);
                     })
                     .catch((error) => {
                         console.log(error);
@@ -97,10 +99,11 @@ const CheckOut = () => {
     };
 
     return (
-        <div className='checkout__container'>
+        <div className={`checkout__container${showForm ? '' : ' show-confirmation'}`}>
             <div className='checkout__formContainer'>
-                <h3 className="mb-4 checkout__title">Ingresa tus datos para completar la solicitud</h3>
+                <h3 className="mb-4 checkout__title">{showForm ? 'Ingresa tus datos para completar la solicitud' : '¡Gracias por confiar en nosotros!'}</h3>
 
+                {showForm ? (
                 <div className='global__checkoutContainer'>
                     <ul className='summary__checkout'>
                         {cart.map((s) => (
@@ -158,15 +161,29 @@ const CheckOut = () => {
                             </div>
 
                             <button type="submit" className="btn btn-primary mt-3 checkout__button">Solicitar Servicio/s</button>
-
-                            {generalError && <p style={{ color: 'red' }} className='error__message'>{generalError}</p>}
-
-                            {orderId && (
-                                <p className='confirmation__message'>¡Gracias por confiar en nosotros! Tu número de control es: {orderId}</p>
-                            )}
+                    
                         </div>
                     </form>
+
+                    <div>
+                        {generalError && <p style={{ color: 'red' }} className='error__message'>{generalError}</p>}
+                    </div>
                 </div>
+
+                ) : (
+
+                <div className='confirmation__container'>
+                    {orderId && (
+                        <div>
+                        <p className='confirmation__message'>Tu número de control es:</p><p className='confirmation__orderId'>{orderId}</p>
+                        <button onClick={() => window.location.href = '/'} className="btn btn-primary mt-3 back__button">
+                        Volver a Inicio
+                        </button>
+                        </div>
+                    )}
+                </div>
+
+                )}   
             </div>
         </div>
     );
