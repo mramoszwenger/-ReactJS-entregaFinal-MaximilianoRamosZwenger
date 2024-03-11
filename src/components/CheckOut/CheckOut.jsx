@@ -99,6 +99,7 @@ const CheckOut = () => {
     };
 
     return (
+        <div className='global__container'>
         <div className={`checkout__container${showForm ? '' : ' show-confirmation'}`}>
             <div className='checkout__formContainer'>
                 <h3 className="mb-4 checkout__title">{showForm ? 'Ingresa tus datos para completar la solicitud' : '¡Gracias por confiar en nosotros!'}</h3>
@@ -175,7 +176,7 @@ const CheckOut = () => {
                 <div className='confirmation__container'>
                     {orderId && (
                         <div>
-                        <p className='confirmation__message'>Tu número de control es:</p><p className='confirmation__orderId'>{orderId}</p>
+                        <p className='confirmation__message'>En breve alguien de nuestro equipo se pondrá en contacto. Tu número de control es:</p><p className='confirmation__orderId'>{orderId}</p>
                         <button onClick={() => window.location.href = '/'} className="btn btn-primary mt-3 back__button">
                         Volver a Inicio
                         </button>
@@ -185,6 +186,7 @@ const CheckOut = () => {
 
                 )}   
             </div>
+        </div>
         </div>
     );
 };

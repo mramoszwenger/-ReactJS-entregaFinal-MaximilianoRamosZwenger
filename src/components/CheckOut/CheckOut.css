@@ -1,3 +1,7 @@
+.global__container {
+    background-color: #f7f7f7;
+}
+
 .global__checkoutContainer {
     display: flex;
     flex-direction: row;
@@ -105,7 +109,7 @@
 
 .confirmation__message {
     font-size: 20px;
-    margin-top: 50px;
+    margin: 50px 75px 25px 75px;
 }
 
 .confirmation__orderId {
